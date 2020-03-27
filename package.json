@@ -1,6 +1,6 @@
 {
   "_from": "choose-images",
-  "_id": "choose-images@1.0.0",
+  "_id": "choose-images@1.0.1",
   "_inBundle": false,
   "_integrity": "sha1-75YeuQ1B3RUYZrEhskyv/8qiskQ=",
   "_location": "/choose-images",
@@ -41,7 +41,9 @@
   "keywords": [
     "choose",
     "images",
-    "video"
+    "video",
+    "audio",
+    "h5"
   ],
   "license": "ISC",
   "main": "index.js",
@@ -50,5 +52,5 @@
     "build": "webpack --config webpack.config.js",
     "dev": "npx serve"
   },
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
