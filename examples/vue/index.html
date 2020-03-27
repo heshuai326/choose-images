@@ -23,7 +23,7 @@
         },
         methods: {
             chooseImage: async function () {
-                const res = await choose({ type: 'video' })
+                const res = await choose()
                 this.images = JSON.stringify(res)
             }
         }

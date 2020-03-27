@@ -7,14 +7,8 @@
  * @param {number} [object.count=9] 最多可以选择的图片张数
  * @param {string} [object.inputId] 用来上传的input元素
  */
-const choose = function (options) {
+const choose = function (options = {}) {
     return new Promise((resolve, reject) => {
-        if (Object.prototype.toString.call(options) !== '[object Object]') {
-            const err = { msg: `choose:error options is not a object` }
-            console.error(err)
-            return reject(err)
-        }
-
         const {
             type = 'image',
             sourceType = ['album', 'camera'],
@@ -34,6 +28,7 @@ const choose = function (options) {
         }
 
         const obj = document.createElement('input')
+        const sourceTypeString = sourceType.toString()
         const acceptableSourceType = ['user', 'environment', 'camera']
         obj.setAttribute('type', 'file')
         obj.setAttribute('id', inputId)
@@ -53,6 +48,10 @@ const choose = function (options) {
         input.dispatchEvent(inptEvent)
         input.onchange = (e) => {
             const files = [...e.target.files]
+            if (files.length > count) {
+                const warn = { msg: `choose:warn ${type} count is more than ${count} ` }
+                console.warn(warn)
+            }
             files && files.map(file => {
                 const blob = new Blob([file], { type: file.type })
                 const url = URL.createObjectURL(blob)

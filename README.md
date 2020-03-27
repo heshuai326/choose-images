@@ -25,7 +25,7 @@ For standalone usage:
 ```html
 <body>
     <div id="app">
-        <button v-on:click="chooseImage">选择图片</button>
+        <button v-on:click="chooseImage">choose video</button>
         <h1>获取到的图片信息:{{images}}</h1>
     </div>
 </body>
@@ -51,14 +51,16 @@ For standalone usage:
 
 ```html
 <body>
-    <button id='btn'>选择图片</button>
+    <button id='btn'>choose images</button>
 </body>
 <script src="../../src/index.js" type="module"></script>
 <script type="module">
     document.getElementById('btn').onclick = function () {
         choose({
-            type: 'image',
-            count: 9
+            type = 'image',
+            sourceType = ['album', 'camera'],
+            count = 9,
+            inputId = 'inputId'
         })
             .then(res => {
                 console.log(res)
