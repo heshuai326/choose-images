@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>choose image video</title>
+</head>
+
+<body>
+    <button id='btn'>选择图片</button>
+</body>
+<script src="../../src/index.js" type="module"></script>
+<script type="module">
+    document.getElementById('btn').onclick = function () {
+        choose({
+            type: 'image',
+            count: 9
+        })
+            .then(res => {
+                console.log(res)
+                document.body.append(JSON.stringify(res))
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+</script>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>choose image video</title>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="chooseImage">选择图片</button>
+        <h1>获取到的图片信息:{{images}}</h1>
+    </div>
+</body>
+<script type="text/javascript" src="https://unpkg.com/vue"></script>
+<script type="module">
+    import choose from '../../src/index.js'
+    new Vue({
+        el: "#app",
+        data: {
+            images: ''
+        },
+        methods: {
+            chooseImage: async function () {
+                const res = await choose({ type: 'video' })
+                this.images = JSON.stringify(res)
+            }
+        }
+    })
+</script>
+
+</html>

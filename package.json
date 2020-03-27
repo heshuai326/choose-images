@@ -1,0 +1,54 @@
+{
+  "_from": "choose-images",
+  "_id": "choose-images@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-75YeuQ1B3RUYZrEhskyv/8qiskQ=",
+  "_location": "/choose-images",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "choose-images",
+    "name": "choose-images",
+    "escapedName": "choose-images",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/choose-images/download/choose-images-1.0.0.tgz",
+  "_shasum": "ef961eb90d41dd151866b121b24cafffcaa2b244",
+  "_spec": "choose-images",
+  "_where": "/Users/heshuai/node_modules",
+  "author": {
+    "name": "heshuai"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:heshuai326/choose-images.git"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "h5 实现图片视频 选择",
+  "devDependencies": {
+    "serve": "^11.3.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "keywords": [
+    "choose",
+    "images",
+    "video"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "choose-images",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "dev": "npx serve"
+  },
+  "version": "1.0.0"
+}
